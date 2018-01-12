@@ -7,3 +7,24 @@ org:
     boot:
       autoconfigure:
         security: INFO
+
+management:
+  security:
+    enabled: false
+
+---
+# For deployment in Docker containers
+spring:
+  profiles: docker
+
+server:
+  port: 9999
+
+eureka:
+  instance:
+    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 10
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://discovery:8761/eureka/
