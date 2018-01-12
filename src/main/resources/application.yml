@@ -1,0 +1,9 @@
+server:
+  port: 9999
+  contextPath: /uaa
+
+org:
+  springframework:
+    boot:
+      autoconfigure:
+        security: INFO
